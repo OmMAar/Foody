@@ -57,39 +57,47 @@ struct Home: View {
                 
                 Divider()
                 
-                ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
-                    VStack(spacing : 25){
-                        ForEach(HomeModel.filtered){item in
-                            
-                            // item view
-                            ZStack(alignment: Alignment(horizontal: .center, vertical: .top), content: {
-                                ItemView(item: item)
+                if HomeModel.items.isEmpty{
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                }else {
+                    ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
+                        VStack(spacing : 25){
+                            ForEach(HomeModel.filtered){item in
                                 
-                                HStack{
+                                // item view
+                                ZStack(alignment: Alignment(horizontal: .center, vertical: .top), content: {
+                                    ItemView(item: item)
                                     
-                                    Text("FREE DELIVERY")
-                                        .foregroundColor(.white)
-                                        .padding(.vertical,10)
-                                        .padding(.horizontal)
-                                        .background(Color.pink)
-                                    
-                                    Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-                                    
-                                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                                        Image(systemName: "plus")
+                                    HStack{
+                                        
+                                        Text("FREE DELIVERY")
                                             .foregroundColor(.white)
-                                            .padding(10)
+                                            .padding(.vertical,10)
+                                            .padding(.horizontal)
                                             .background(Color.pink)
-                                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                    })
-                                }
-                                .padding(.trailing,10)
-                                .padding(.top,10)
-                               
-                            })     .frame(width : UIScreen.main.bounds.width - 30)
-                        }
-                    }.padding(.top,10)
-                })
+                                        
+                                        Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+                                        
+                                        Button(action: {
+                                            HomeModel.addToCart(item: item)
+                                        }, label: {
+                                            Image(systemName: item.isAdded ? "checkmark" :"plus")
+                                                .foregroundColor(.white)
+                                                .padding(10)
+                                                .background(item.isAdded ? Color.green : Color.pink)
+                                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                        })
+                                    }
+                                    .padding(.trailing,10)
+                                    .padding(.top,10)
+                                   
+                                })     .frame(width : UIScreen.main.bounds.width - 30)
+                            }
+                        }.padding(.top,10)
+                    })
+                }
                 
                 
             }
