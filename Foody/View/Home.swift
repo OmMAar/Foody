@@ -79,6 +79,7 @@ struct Home: View {
                                                 .padding(.vertical,10)
                                                 .padding(.horizontal)
                                                 .background(Color.yellow)
+                                            
                                                 
                                             
                                             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
