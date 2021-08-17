@@ -1,5 +1,13 @@
 # Foody
-Simple Menu App With Firebase And SwiftUI
+Simple Menu App
+
+Features :
+  1- Firebase
+  2- Location
+  3- Cart
+  3- Item Details
+  4- Add Order
+  5- Search
 
 ## Preview 
 <div style="
