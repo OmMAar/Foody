@@ -20,7 +20,7 @@ struct CartView: View {
                 }, label: {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 26 , weight : .heavy))
-                        .foregroundColor(.pink)
+                        .foregroundColor(.red)
                 })
                 
                 Text("My Cart")
@@ -64,32 +64,37 @@ struct CartView: View {
                                     
                                     Spacer()
                                     
-                                    Button(action: {
-                                        if cart.quantity > 1{homeData.cartItems[homeData.getIndex(item: cart.item, isCartIndex: true)].quantity -= 1 }
+                                    HStack {
+                                        Button(action: {
+                                            if cart.quantity > 1{homeData.cartItems[homeData.getIndex(item: cart.item, isCartIndex: true)].quantity -= 1 }
+                                            
+                                        }){
                                         
-                                    }){
-                                    
-                                        Image(systemName: "minus")
-                                            .font(.system(size: 16, weight : .heavy))
-                                            .foregroundColor(.black)
-                                    }
-                                    
-                                    Text("\(cart.quantity)")
-                                        .fontWeight(.heavy)
-                                        .foregroundColor(.black)
-                                        .padding(.vertical,5)
-                                        .padding(.horizontal,10)
-                                    
-                                    
-                                    Button(action: {
-                                        homeData.cartItems[homeData.getIndex(item: cart.item, isCartIndex: true)].quantity += 1
+                                            Image(systemName: "minus")
+                                                .font(.system(size: 16, weight : .heavy))
+                                                .foregroundColor(.white)
+                                        } .padding(.horizontal,3)
                                         
-                                    }){
+                                        Text("\(cart.quantity)")
+                                            .fontWeight(.heavy)
+                                            .foregroundColor(.white)
+                                            .padding(.vertical,5)
+                                            .padding(.horizontal,10)
+                                        
+                                        
+                                        Button(action: {
+                                            homeData.cartItems[homeData.getIndex(item: cart.item, isCartIndex: true)].quantity += 1
+                                            
+                                        }){
+                                        
+                                            Image(systemName: "plus")
+                                                .font(.system(size: 16, weight : .heavy))
+                                                .foregroundColor(.white)
+                                        }.padding(.horizontal,3)
+                                        
+                                    }.background(Color.yellow).cornerRadius(5)
                                     
-                                        Image(systemName: "plus")
-                                            .font(.system(size: 16, weight : .heavy))
-                                            .foregroundColor(.black)
-                                    }
+                                    
                                 }
                             }
                             
@@ -142,7 +147,7 @@ struct CartView: View {
                         .foregroundColor(.white)
                         .padding(.vertical)
                         .frame(width: UIScreen.main.bounds.width - 30)
-                        .background(Color.pink)
+                        .background(Color.red)
                         .cornerRadius(15)
                 }
                 

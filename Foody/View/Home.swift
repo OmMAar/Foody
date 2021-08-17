@@ -33,8 +33,8 @@ struct Home: View {
                     Text(HomeModel.userAddres)
                         .font(.caption)
                         .fontWeight(.heavy)
-                        .foregroundColor(.pink)
-                    
+                        .foregroundColor(.red)
+
                     Spacer(minLength: 0)
                     
                 }.padding([.horizontal,.top])
@@ -67,33 +67,38 @@ struct Home: View {
                             ForEach(HomeModel.filtered){item in
                                 
                                 // item view
-                                ZStack(alignment: Alignment(horizontal: .center, vertical: .top), content: {
-                                    ItemView(item: item)
-                                    
-                                    HStack{
+                                NavigationLink (
+                                    destination: ItemDetails(homeData : HomeModel, item: item)){
+                                    ZStack(alignment: Alignment(horizontal: .center, vertical: .top), content: {
+                                        ItemView(item: item)
                                         
-                                        Text("FREE DELIVERY")
-                                            .foregroundColor(.white)
-                                            .padding(.vertical,10)
-                                            .padding(.horizontal)
-                                            .background(Color.pink)
-                                        
-                                        Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-                                        
-                                        Button(action: {
-                                            HomeModel.addToCart(item: item)
-                                        }, label: {
-                                            Image(systemName: item.isAdded ? "checkmark" :"plus")
+                                        HStack{
+                                            
+                                            Text("$\(item.item_cost)")
                                                 .foregroundColor(.white)
-                                                .padding(10)
-                                                .background(item.isAdded ? Color.green : Color.pink)
-                                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                        })
-                                    }
-                                    .padding(.trailing,10)
-                                    .padding(.top,10)
-                                   
-                                })     .frame(width : UIScreen.main.bounds.width - 30)
+                                                .padding(.vertical,10)
+                                                .padding(.horizontal)
+                                                .background(Color.yellow)
+                                                
+                                            
+                                            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+                                            
+                                            Button(action: {
+                                                HomeModel.addToCart(item: item)
+                                            }, label: {
+                                                Image(systemName: item.isAdded ? "cart.fill.badge.minus" :"cart.badge.plus")
+                                                    .foregroundColor(.white)
+                                                    .padding(10)
+                                                    .background(item.isAdded ? Color.green : Color.red)
+                                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                            })
+                                        }
+                                        .padding(.trailing,10)
+                                        .padding(.top,10)
+                                       
+                                    })     .frame(width : UIScreen.main.bounds.width - 30)
+                                }
+                              
                             }
                         }.padding(.top,10)
                     })
@@ -155,5 +160,3 @@ struct Home: View {
         })
     }
 }
-
-

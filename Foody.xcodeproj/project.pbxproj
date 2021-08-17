@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071DB44D26CB3B3700B0746C /* ItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DB44C26CB3B3700B0746C /* ItemDetails.swift */; };
 		0729F79926C97BE5003DAB76 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729F79826C97BE5003DAB76 /* Cart.swift */; };
 		0729F79C26C9810B003DAB76 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729F79B26C9810B003DAB76 /* CartView.swift */; };
 		0729F79F26C983C3003DAB76 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729F79E26C983C3003DAB76 /* CartViewModel.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		071DB44C26CB3B3700B0746C /* ItemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetails.swift; sourceTree = "<group>"; };
 		0729F79826C97BE5003DAB76 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		0729F79B26C9810B003DAB76 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		0729F79E26C983C3003DAB76 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				072D49DF26C73E3B0064FF19 /* Menu.swift */,
 				0764606F26C87A590005D6FE /* ItemView.swift */,
 				0729F79B26C9810B003DAB76 /* CartView.swift */,
+				071DB44C26CB3B3700B0746C /* ItemDetails.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				072D49D626C730C80064FF19 /* Home.swift in Sources */,
 				0764606D26C875EE0005D6FE /* Item.swift in Sources */,
 				072D49DD26C731290064FF19 /* HomeViewModel.swift in Sources */,
+				071DB44D26CB3B3700B0746C /* ItemDetails.swift in Sources */,
 				072D49C026C730440064FF19 /* ContentView.swift in Sources */,
 				0729F79F26C983C3003DAB76 /* CartViewModel.swift in Sources */,
 			);

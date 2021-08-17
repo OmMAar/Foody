@@ -20,7 +20,7 @@ struct Menu: View {
                 HStack(spacing: 15){
                     Image(systemName: "cart")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.pink)
+                        .foregroundColor(.red)
                     
                     Text("Cart")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -37,7 +37,7 @@ struct Menu: View {
                 
                 Text("Version 0.1")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(.pink)
+                    .foregroundColor(.red)
             }
             .padding(10)
         }.padding([.top,.trailing])

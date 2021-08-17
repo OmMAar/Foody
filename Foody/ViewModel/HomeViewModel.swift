@@ -83,7 +83,8 @@ class HomeViewModel: NSObject , ObservableObject , CLLocationManagerDelegate {
     }
     
     // anynomus login for rading database...
-        func login() {
+       
+    func login() {
             Auth.auth().signInAnonymously{(res , err) in
                 
                 
@@ -125,7 +126,7 @@ class HomeViewModel: NSObject , ObservableObject , CLLocationManagerDelegate {
     }
     
     
-// Search or Filter....
+    // Search or Filter....
     func filterData() {
         withAnimation(.linear){
             self.filtered = self.items.filter{
@@ -177,7 +178,8 @@ class HomeViewModel: NSObject , ObservableObject , CLLocationManagerDelegate {
         return isCartIndex ? cartIndex : index
     }
     
-        func calulcaltingPrice() -> String {
+        
+    func calulcaltingPrice() -> String {
             var price : Float = 0
             cartItems.forEach{ (item) in
                 price += Float(item.quantity) * Float(truncating: item.item.item_cost)
@@ -186,7 +188,8 @@ class HomeViewModel: NSObject , ObservableObject , CLLocationManagerDelegate {
             return getPrice(value: price)
         }
         
-        func getPrice(value : Float) -> String {
+        
+    func getPrice(value : Float) -> String {
             let format = NumberFormatter()
             format.numberStyle = .currency
             return format.string(from: NSNumber(value : value)) ?? ""
